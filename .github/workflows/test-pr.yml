@@ -1,0 +1,27 @@
+name: Perform Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  Test-PR:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - uses: pogfi/pnpm-install-cache@v0.0.2
+        name: Install pnpm
+
+      - name: Lint
+        run: pnpm run lint:check
+
+      - name: Typecheck
+        run: pnpm exec tsc
+
+      - name: Run Tests
+        run: pnpm run test --run --reporter=verbose

@@ -1,0 +1,12 @@
+{
+  "name": "vite-plugin-using",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9",
+    "vitest": "^0.34.3"
+  }
+}

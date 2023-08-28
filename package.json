@@ -1,0 +1,81 @@
+{
+  "name": "vite-plugin-using",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint --fix ./src; prettier --write ./src --log-level error",
+    "lint:check": "eslint --max-warnings 10 ./src && prettier --check ./src",
+    "prebuild": "rm -rf dist",
+    "prepare": "husky install",
+    "size": "node scripts/esbuild.js",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.2.0",
+    "@types/node": "20.5.7",
+    "@typescript-eslint/eslint-plugin": "6.5.0",
+    "@typescript-eslint/parser": "6.5.0",
+    "@vitest/coverage-c8": "0.33.0",
+    "esbuild": "0.19.2",
+    "eslint": "8.48.0",
+    "eslint-plugin-filename-export": "1.0.4",
+    "husky": "8.0.3",
+    "lint-staged": "14.0.1",
+    "prettier": "3.0.2",
+    "pretty-bytes": "6.1.1",
+    "typescript": "5.2.2",
+    "vite": "4.4.9",
+    "vite-plugin-dts": "3.5.2",
+    "vite-tsconfig-paths": "4.2.0",
+    "vitest": "0.34.3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSameLine": true,
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
+    "importOrder": [
+      "node:.*",
+      "@/lib(.*)$",
+      "@/utils(.*)$",
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
+  },
+  "lint-staged": {
+    "*.{js,ts,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "pnpm": {
+    "overrides": {
+      "typescript@<5.1.6": "^5.1.6",
+      "semver@>=6.0.0 <6.3.1": ">=6.3.1",
+      "semver@>=7.0.0 <7.5.2": ">=7.5.2"
+    }
+  }
+}

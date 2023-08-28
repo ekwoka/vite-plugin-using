@@ -1,0 +1,39 @@
+name: Publish to NPM
+on:
+  push:
+    paths:
+      - 'package.json'
+    branches:
+      - main
+jobs:
+  Build-Publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          always-auth: true
+
+      - uses: pogfi/pnpm-install-cache@v0.0.2
+        name: Install pnpm
+
+      - name: Lint
+        run: pnpm run lint:check
+
+      - name: Run Tests
+        run: pnpm run test --run --reporter=verbose
+
+      - name: Build
+        run: pnpm run build
+
+      - name: SetupAuth
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Publish package on NPM 📦
+        run: pnpm publish -r
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
