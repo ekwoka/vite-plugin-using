@@ -19,7 +19,6 @@
     "url": "https://github.com/ekwoka/vite-plugin-using"
   },
   "homepage": "https://github.com/ekwoka/vite-plugin-using/blob/main/README.md",
-  "private": true,
   "exports": {
     ".": {
       "import": "./dist/index.js",

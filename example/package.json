@@ -1,5 +1,4 @@
 {
-  "name": "vite-plugin-using",
   "private": true,
   "type": "module",
   "scripts": {
