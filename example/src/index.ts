@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 Symbol.dispose ??= Symbol('dispose');
 Symbol.asyncDispose ??= Symbol('asyncDispose');
 

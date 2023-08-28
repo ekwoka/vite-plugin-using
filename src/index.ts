@@ -13,6 +13,8 @@ export const ViteUsing = (): Plugin => ({
   },
 });
 
+export default ViteUsing;
+
 const usingRegex =
   /(?<async>await\s+)?using\s+(?<assignment>(?<name>\w+)\s*=\s*(.+)\s*;?)/g;
 const transformUsing = (code: string): string => {

@@ -1,7 +1,24 @@
 {
   "name": "vite-plugin-using",
   "version": "0.0.1",
+  "author": {
+    "name": "Eric Kwoka",
+    "email": "eric@thekwoka.net",
+    "url": "https://thekwoka.net/"
+  },
+  "keywords": [
+    "using",
+    "resource managment",
+    "dispose",
+    "asyncdispose"
+  ],
+  "license": "MIT",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekwoka/vite-plugin-using"
+  },
+  "homepage": "https://github.com/ekwoka/vite-plugin-using/blob/main/README.md",
   "private": true,
   "exports": {
     ".": {
@@ -25,9 +42,6 @@
     "size": "node scripts/esbuild.js",
     "test": "vitest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.2.0",
     "@types/node": "20.5.7",
