@@ -18,6 +18,8 @@
     "type": "git",
     "url": "https://github.com/ekwoka/vite-plugin-using"
   },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "homepage": "https://github.com/ekwoka/vite-plugin-using/blob/main/README.md",
   "exports": {
     ".": {
