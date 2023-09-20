@@ -6,7 +6,6 @@ export const ViteUsing = (): Plugin => ({
   enforce: 'pre',
   transform(code, id) {
     if (idRegexp.test(id)) {
-      console.error('matches filetype');
       code = transformUsing(code);
     }
     return code;
