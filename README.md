@@ -1,5 +1,7 @@
 # A quick and easy way to start using USING today!
 
+> Note: This project is deprecated! The behavior is easily accessible inside of VITE using `esbuild.target: 'es2022' which will be a lot better than this dirty package anyway.
+
 [<img src="https://img.shields.io/npm/v/vite-plugin-using?label=%20&style=for-the-badge&logo=pnpm&logoColor=white">](https://www.npmjs.com/package/vite-plugin-using)
 <img src="https://img.shields.io/npm/types/vite-plugin-using?label=%20&logo=typescript&logoColor=white&style=for-the-badge">
 <img src="https://img.shields.io/npm/dt/vite-plugin-using?style=for-the-badge&logo=npm&logoColor=white&logo=npm&logoColor=white" >
